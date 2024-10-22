@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="_Archivo">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onNewAction" text="Nuevo">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onOpenAction" text="Abrir">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#onSaveAction" text="Guardar">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Guardar como" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Salir" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="_Editar">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Copiar" />
+                        <MenuItem mnemonicParsing="false" text="Cortar" />
+                        <MenuItem mnemonicParsing="false" text="Pegar" />
+                        <MenuItem mnemonicParsing="false" text="Deshacer" />
+                        <MenuItem mnemonicParsing="false" text="Rehacer" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ay_uda">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox spacing="5.0">
+               <children>
+                  <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onNewAction" text="Button">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2f-file" iconSize="24" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onOpenAction" text="Button">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2f-folder-open" iconSize="24" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSaveAction" textOverrun="CLIP">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2c-content-save" iconSize="24" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCloseAction" text="Button">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2c-close-box" iconSize="24" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" text="Button">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2c-close-box-multiple" iconSize="24" onDragDetected="#onCloseAllAction" />
+                     </graphic>
+                  </Button>
+                  <Separator orientation="VERTICAL" />
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="218.0" layoutY="10.0" mnemonicParsing="false" text="Copiar">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2c-content-copy" iconSize="24" onDragDetected="#onCopyAction" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="276.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCutAction" text="Cortar">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2c-content-cut" iconSize="24" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="328.0" layoutY="10.0" mnemonicParsing="false" onAction="#onPasteAction" text="Button">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2c-content-paste" iconSize="24" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="380.0" layoutY="10.0" mnemonicParsing="false" onAction="#onUndoAction" text="Deshacer">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2u-undo" iconSize="24" />
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="GRAPHIC_ONLY" layoutX="432.0" layoutY="10.0" mnemonicParsing="false" onAction="#onRedoAction" text="Rehacer">
+                     <graphic>
+                        <FontIcon iconLiteral="mdi2r-redo" iconSize="24" />
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TabPane fx:id="editionTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
